@@ -16,6 +16,8 @@
   - PREFIX: 저장될 파일 이름 앞부분 (예: 'template_img')
   - START_IDX: 시작 번호 (None이면 기존 파일을 보고 자동으로 다음 번호부터 저장)
 """
+import os
+os.environ["OPENCV_VIDEOIO_PRIORITY_GSTREAMER"] = "0"
 
 from picamera2 import Picamera2
 import cv2
@@ -32,7 +34,7 @@ PREFIX = "template_img"
 START_IDX = None     # None => auto-detect next index by scanning OUTPUT_DIR
 EXT = ".jpg"         # ".jpg" or ".png"
 JPEG_QUALITY = 95    # only for .jpg
-FRAME_MAX_W = 1280   # scale down preview for speed; saved crops are from frozen frame (same size)
+FRAME_MAX_W = 960   # scale down preview for speed; saved crops are from frozen frame (same size)
 
 
 def is_valid_frame(f) -> bool:
