@@ -23,7 +23,7 @@ from picamera2 import Picamera2
 
 def open_picam2(size=(1280, 720)):
     picam2 = Picamera2()
-    cfg = picam2.create_preview_configuration(main={"size": size, "format": "RGB888"})
+    cfg = picam2.create_preview_configuration(main={"size": size, "format": "BGR888"})
     picam2.configure(cfg)
     picam2.start()
     return picam2
@@ -39,8 +39,8 @@ SOURCE = Picamera2  # 내부 카메라(0), 외부 카메라(1), 카메라 경로
 
 # 옵션 1) 추적할 객체를 직접 지정 (명확성을 위해 권장)
 OBJECTS: List[Dict[str, Any]] = [
-    {"name": "velb", "template_path": "assets/template_img1.jpg", "color": (0, 255, 0)},
-    {"name": "led", "template_path": "assets/template_img2.jpg", "color": (255, 128, 0)},
+    {"name": "valve", "template_path": "../assets/template_img1.jpg", "color": (0, 255, 0)},
+    {"name": "led", "template_path": "../assets/template_img2.jpg", "color": (255, 128, 0)},
 ]
 
 # 옵션 2) 폴더 내 모든 템플릿 자동 불러오기 (png/jpg). 사용하지 않으려면 "" 로 설정.
@@ -247,7 +247,7 @@ def main():
     USE_PICAM2 = True
 
     if USE_PICAM2:
-        picam2 = open_picam2(size=(1280, 720))
+        picam2 = open_picam2(size=(1280, 960))
         def grab():
             return True, read_frame_bgr(picam2)
     else:

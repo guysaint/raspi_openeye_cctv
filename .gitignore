@@ -21,7 +21,7 @@ build/
 # ----------------------------
 # macOS 특유 파일
 # ----------------------------
-.DS_Store
+.DS_Storet
 .AppleDouble
 .LSOverride
 
