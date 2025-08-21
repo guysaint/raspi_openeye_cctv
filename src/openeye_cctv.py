@@ -39,8 +39,8 @@ SOURCE = Picamera2  # 내부 카메라(0), 외부 카메라(1), 카메라 경로
 
 # 옵션 1) 추적할 객체를 직접 지정 (명확성을 위해 권장)
 OBJECTS: List[Dict[str, Any]] = [
-    {"name": "velb", "template_path": "../assets/template_image1.jpg", "color": (0, 255, 0)},
-    {"name": "led", "template_path": "../assets/template_image2.jpg", "color": (255, 128, 0)},
+    {"name": "velb", "template_path": "assets/template_img1.jpg", "color": (0, 255, 0)},
+    {"name": "led", "template_path": "assets/template_img2.jpg", "color": (255, 128, 0)},
 ]
 
 # 옵션 2) 폴더 내 모든 템플릿 자동 불러오기 (png/jpg). 사용하지 않으려면 "" 로 설정.
@@ -76,7 +76,7 @@ MOTION_AREA_THRESH = 0.05  # 허용 박스 내 전경 픽셀 비율이 임계값
 EMA_ALPHA = 0.35           # 중심 좌표 보정을 위한 지수 이동 평균 가중치
 DEVIATE_FRAMES_REQ = 3     # strong_deviate 발생 조건: 연속 편차 프레임 수
 APPEAR_FRAMES_REQ = 3
-GRACE_SECS = 2.0           # 알림 발생 전 복귀 허용 시간
+GRACE_SECS = 10.0           # 알림 발생 전 복귀 허용 시간
 
 ANALYZE_EVERY = 2          # CPU 절약을 위해 N번째 프레임마다 처리
 

@@ -34,7 +34,7 @@ PREFIX = "template_img"
 START_IDX = None     # None => auto-detect next index by scanning OUTPUT_DIR
 EXT = ".jpg"         # ".jpg" or ".png"
 JPEG_QUALITY = 95    # only for .jpg
-FRAME_MAX_W = 960   # scale down preview for speed; saved crops are from frozen frame (same size)
+FRAME_MAX_W = 0   # scale down preview for speed; saved crops are from frozen frame (same size)
 
 
 def is_valid_frame(f) -> bool:
